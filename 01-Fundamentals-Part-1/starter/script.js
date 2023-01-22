@@ -133,7 +133,7 @@ if(birthYear <= 2000){
 console.log(century)
 */
 
-
+/*
 //type conversion
 const inputYear = '1991';
 console.log(Number(inputYear), inputYear);
@@ -145,5 +145,19 @@ console.log(String(23), 23);
 console.log('I am' + 23 + 'years old');
 console.log('23' - '10' - 3);
 console.log('23' * '2');
+*/
 
+// 5 falsey values: 0, '', undefined, null, NaN
+const money = 0;
+if(money){
+    console.log("Don't spend it all ;)");
+}else{
+    console.log('You should get a job')
+}
 
+let height = 1.6;
+if(height){
+    console.log('YAY! Height is defined');
+}else{
+    console.log('Height is UNDEFINED');
+}
