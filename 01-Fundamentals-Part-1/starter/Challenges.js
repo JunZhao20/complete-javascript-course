@@ -37,3 +37,43 @@ if(markHigherBMI == true){
 }
 */
 
+//Challenge 3
+
+//1.
+const dolphinsAvgScore = (96 + 108 + 89) / 3;
+const KoalasAvgScore = (88 + 91 + 110) / 3;
+
+/*
+//2.
+if(dolphinsAvgScore > KoalasAvgScore){
+    console.log('dolphines wins');
+} else if(dolphinsAvgScore < KoalasAvgScore){
+    console.log('koalas win');
+} else {
+    console.log('Its a draw!')
+}
+*/
+
+/*
+//3 and 4.
+const dolphinsAvgScore1 = (97 + 112 + 101) / 3;
+const KoalasAvgScore1 = (109 + 95 + 123) / 3;
+
+let minScore = 100;
+
+if((dolphinsAvgScore1 >= minScore) && 
+    (dolphinsAvgScore1 > KoalasAvgScore1)){
+        console.log('dolphine wins');
+} else if((KoalasAvgScore1 >= minScore) &&
+    (KoalasAvgScore1 > dolphinsAvgScore1)){
+        console.log('koalas wins');
+} else if((dolphinsAvgScore1 && KoalasAvgScore1) >= minScore && 
+(dolphinsAvgScore1 === KoalasAvgScore1)){
+    console.log('its a draw!');
+} else{
+    console.log('No team qualified');
+}
+*/
+
+
+
