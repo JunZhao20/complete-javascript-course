@@ -75,5 +75,13 @@ if((dolphinsAvgScore1 >= minScore) &&
 }
 */
 
+// Challenge 4
+ 
+//1.
+const bill = 40;
+const tip = bill < 50 || bill > 300 ? bill * 0.2 : bill * 0.15;
+
+console.log(`bill: ${bill}, tip: ${tip}, total value: ${bill + tip}.`)
+
 
 
