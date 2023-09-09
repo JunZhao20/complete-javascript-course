@@ -1,56 +1,56 @@
+/* this selectors selects all elements within the page. */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 body {
-  background-color: rgb(255, 247, 201);
+  background-color: rgb(248, 201, 201);
   font-family: Arial;
   font-size: 20px;
-  padding: 50px;
+  padding: 45px;
 }
 
 h1 {
-  font-size: 35px;
-  margin-bottom: 25px;
+  font-size: 50px;
+}
+/* styling selector for classes */
+.p1 {
+  color: blueviolet;
+  font-size: 15px;
+  padding: 10px;
 }
 
-h2 {
-  margin-bottom: 20px;
+.form-title {
   text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
-p {
-  margin-bottom: 20px;
+.p-name {
+  font-size: 15px;
 }
 
-.first {
-  color: red;
-}
-
-#your-name {
-  background-color: rgb(255, 220, 105);
-  border: 5px solid #444;
+/* styling selector for IDs */
+#form-model {
+  background-color: beige;
+  border: 5px solid #4444;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 400px;
-  padding: 25px;
-  margin-top: 30px;
 }
 
 input,
 button {
-  padding: 10px;
-  font-size: 16px;
+  padding: 7px;
 }
 
+#image-kachow {
+  width: 300px;
+  height: 300px;
+}
 a {
   background-color: yellowgreen;
-}
-
-#course-image {
-  width: 300px;
-}
-
-#your-name h2 {
-  color: olivedrab;
 }
