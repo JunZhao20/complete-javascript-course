@@ -56,6 +56,8 @@ p {
 /* -------------------------- */
 /* CLASSES TO MAKE MODAL WORK */
 .hidden {
+  /* None == not visible */
+  /* Block == visible */
   display: none;
 }
 
