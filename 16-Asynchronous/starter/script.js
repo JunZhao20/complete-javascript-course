@@ -161,46 +161,90 @@ TEST COORDINATES 2: 19.037, 72.873
 TEST COORDINATES 2: -33.933, 18.474
 */
 
-const renderCountryGeo = function (data, className = '') {
-  let lang = Object.keys(data[0].languages);
-  let cur = Object.keys(data[0].currencies);
-  let flag = Object.keys(data[0].flags);
-  const html = `
-  <article class="country${className}">
-    <img class="country__img" src="${data[0].flags[flag[0]]}"/>
-    <div class="country__data">
-      <h3 class="country__name">${data[0].name.common}</h3>
-      <h4 class="country__region">${data[0].region}</h4>
-      <p class="country__row"><span>🧑‍🤝‍🧑</span>${(
-        +data[0].population / 1000000
-      ).toFixed(1)}M People</p>
-      <p class="country__row"><span>🗣️</span>${data[0].languages[lang[0]]}</p>
-      <p class="country__row"><span>💰</span>${
-        data[0].currencies[cur[0]].name
-      }</p>
-      </p>
-    </div>
-  </article>
-  `;
-  countriesContainer.insertAdjacentHTML('beforeend', html);
-};
+// const renderCountryGeo = function (data, className = '') {
+//   let lang = Object.keys(data[0].languages);
+//   let cur = Object.keys(data[0].currencies);
+//   let flag = Object.keys(data[0].flags);
+//   const html = `
+//   <article class="country${className}">
+//     <img class="country__img" src="${data[0].flags[flag[0]]}"/>
+//     <div class="country__data">
+//       <h3 class="country__name">${data[0].name.common}</h3>
+//       <h4 class="country__region">${data[0].region}</h4>
+//       <p class="country__row"><span>🧑‍🤝‍🧑</span>${(
+//         +data[0].population / 1000000
+//       ).toFixed(1)}M People</p>
+//       <p class="country__row"><span>🗣️</span>${data[0].languages[lang[0]]}</p>
+//       <p class="country__row"><span>💰</span>${
+//         data[0].currencies[cur[0]].name
+//       }</p>
+//       </p>
+//     </div>
+//   </article>
+//   `;
+//   countriesContainer.insertAdjacentHTML('beforeend', html);
+// };
 
-const whereAmI = function (lat, lng) {
-  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
-    .then(response => response.json())
-    .then(data => {
-      fetch(`https://restcountries.com/v3.1/name/${data.country}`)
-        .then(response1 => response1.json())
-        .then(data1 => {
-          renderCountryGeo(data1);
-        });
-    })
-    .catch(error => {
-      renderError(`Something went wrong ${error.message}`);
-    })
-    .finally((countriesContainer.style.opacity = 1));
-};
+// const whereAmI = function (lat, lng) {
+//   fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+//     .then(response => response.json())
+//     .then(data => {
+//       fetch(`https://restcountries.com/v3.1/name/${data.country}`)
+//         .then(response1 => response1.json())
+//         .then(data1 => {
+//           renderCountryGeo(data1);
+//         });
+//     })
+//     .catch(error => {
+//       renderError(`Something went wrong ${error.message}`);
+//     })
+//     .finally((countriesContainer.style.opacity = 1));
+// };
 
-btn.addEventListener('click', function () {
-  whereAmI(52.508, 13.381);
+// btn.addEventListener('click', function () {
+//   whereAmI(52.508, 13.381);
+// });
+
+// The new keyword would create a new object storing the outccome of the promise
+const lotteryPromise = new Promise(function (resolve, reject) {
+  console.log('The draw will begin soon');
+  setTimeout(() => {
+    if (Math.random() >= 0.5) {
+      resolve('Its been resolved');
+    } else {
+      reject(new Error('Its been rejected'));
+    }
+  }, 2000);
 });
+
+lotteryPromise.then(res => console.log(res)).catch(err => console.log(err));
+
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
+
+wait(1)
+  .then(() => {
+    console.log('I waited for 1 seconds');
+    return wait(2);
+  })
+  .then(() => {
+    console.log('I waited for 2 seconds');
+    return wait(3);
+  })
+  .then(() => {
+    console.log('I waited for 3 seconds');
+    return wait(4);
+  })
+  .then(() => console.log('ive waited 4 seconds'));
+
+Promise.resolve('abc').then(x => {
+  console.log(x);
+});
+
+Promise.reject(new Error('Problem')).catch(x => {
+  console.log(x);
+});
+console.error(x);
