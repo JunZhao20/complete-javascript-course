@@ -219,11 +219,11 @@ TEST COORDINATES 2: -33.933, 18.474
 
 // lotteryPromise.then(res => console.log(res)).catch(err => console.log(err));
 
-const wait = function (seconds) {
-  return new Promise(function (resolve = createImage()) {
-    setTimeout(resolve, seconds * 1000);
-  });
-};
+// const wait = function (seconds) {
+//   return new Promise(function (resolve = createImage()) {
+//     setTimeout(resolve, seconds * 1000);
+//   });
+// };
 
 // wait(1)
 //   .then(() => {
@@ -252,41 +252,41 @@ const wait = function (seconds) {
 ///////////////////////////////////////
 // Coding Challenge #2
 
-const image = document.querySelector('.images');
+// const image = document.querySelector('.images');
 
-const listOfImgs = ['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg'];
+// const listOfImgs = ['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg'];
 
-const createImage = function (imgPath) {
-  return new Promise(function (resolve, reject) {
-    let img = document.createElement('img');
-    img.src = imgPath;
-    img.addEventListener('load', () => {
-      image.appendChild(img);
-      resolve('Image is been set');
-    });
-    img.addEventListener('error', function () {
-      reject(new Error('Something went wrong'));
-    });
-    setTimeout(() => {
-      img.style.display = 'none';
-    }, 2000);
-  });
-};
+// const createImage = function (imgPath) {
+//   return new Promise(function (resolve, reject) {
+//     let img = document.createElement('img');
+//     img.src = imgPath;
+//     img.addEventListener('load', () => {
+//       image.appendChild(img);
+//       resolve('Image is been set');
+//     });
+//     img.addEventListener('error', function () {
+//       reject(new Error('Something went wrong'));
+//     });
+//     setTimeout(() => {
+//       img.style.display = 'none';
+//     }, 2000);
+//   });
+// };
 
-wait(2)
-  .then(() => {
-    createImage('img/img-1.jpg');
-    return wait(2);
-  })
-  .then(() => {
-    createImage('img/img-2.jpg');
-    return wait(2);
-  })
-  .then(() => {
-    createImage('img/img-3.jpg');
-    return wait(2);
-  })
-  .catch(err => console.error(err));
+// wait(2)
+//   .then(() => {
+//     createImage('img/img-1.jpg');
+//     return wait(2);
+//   })
+//   .then(() => {
+//     createImage('img/img-2.jpg');
+//     return wait(2);
+//   })
+//   .then(() => {
+//     createImage('img/img-3.jpg');
+//     return wait(2);
+//   })
+//   .catch(err => console.error(err));
 
 /* 
 Build the image loading functionality that I just showed you on the screen.
@@ -318,3 +318,11 @@ TEST DATA: Images in the img folder. Test the error handler by passing a wrong i
 
 GOOD LUCK 😀
 */
+
+const whereAmI = async function (country) {
+  // await bascially replaces the need of then() as it consumes promises.
+  const res = await fetch(
+    `https://restcountries.com/v3.1/name/${data.country}`
+  );
+  const data = await res.json();
+};
