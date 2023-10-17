@@ -2,25 +2,25 @@
 
 // Constructor function
 
-const Person = function (firstName, birthYear) {
-  this.firstName = firstName;
-  this.birthYear = birthYear;
+// const Person = function (firstName, birthYear) {
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
 
-  // DO NO CREATE FUNCTION IN CONSTRUCTOR FUNCTION
-};
+//   // DO NO CREATE FUNCTION IN CONSTRUCTOR FUNCTION
+// };
 
-const jun = new Person('Jun', 2001);
+// const jun = new Person('Jun', 2001);
 
-console.log(jun);
+// console.log(jun);
 
 // Prototypes
 
 // Linking Person class to prototype so it can access method within the prototype
-Person.prototype.calcAge = function () {
-  console.log(2023 - this.birthYear);
-};
+// Person.prototype.calcAge = function () {
+//   console.log(2023 - this.birthYear);
+// };
 
-jun.calcAge();
+// jun.calcAge();
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -37,18 +37,47 @@ DATA CAR 2: 'Mercedes' going at 95 km/h
 GOOD LUCK 😀
 */
 
-const Car = function (make, speed) {
-  this.make = make;
-  this.speed = speed;
-};
+// const Car = function (make, speed) {
+//   this.make = make;
+//   this.speed = speed;
+// };
 
-Car.prototype.accelerate = function () {
-  return console.log(`${this.make} accelerated to ${this.speed + 10}Km/h`);
-};
+// Car.prototype.accelerate = function () {
+//   return console.log(`${this.make} accelerated to ${this.speed + 10}Km/h`);
+// };
 
-Car.prototype.brake = function () {
-  return console.log(`${this.make} deccelerated to ${this.speed - 5}Km/h`);
-};
+// Car.prototype.brake = function () {
+//   return console.log(`${this.make} deccelerated to ${this.speed - 5}Km/h`);
+// };
 
-const fordCar = new Car('ford', 10);
-fordCar.accelerate();
+// const fordCar = new Car('ford', 10);
+// fordCar.accelerate();
+
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  calcAgeCl() {
+    console.log(`${2023 - this.birthYear}`);
+  }
+
+  get name() {
+    return this.firstName;
+  }
+
+  set age(num) {
+    return (this.birthYear = num);
+  }
+
+  set firstName(name) {
+    return (this._firstName = name);
+  }
+}
+
+const jun1 = new PersonCl('jun1', 1001);
+console.log(jun1.birthYear);
+console.log((jun1.age = 2001));
+
+console.log((jun1.firstName = 'hao'));
