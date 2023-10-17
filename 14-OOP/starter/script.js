@@ -113,33 +113,52 @@ GOOD LUCK 😀
 DATA CAR 1: 'Ford' going at 120 km/h
 */
 
-class Car {
-  constructor(make, speed) {
-    this.make = make;
-    this.speed = speed;
-  }
-  accelerate() {
-    return console.log(`${this.make} accelerated to ${this.speed + 10}Km/h`);
-  }
+// class Car {
+//   constructor(make, speed) {
+//     this.make = make;
+//     this.speed = speed;
+//   }
+//   accelerate() {
+//     return console.log(`${this.make} accelerated to ${this.speed + 10}Km/h`);
+//   }
 
-  brake() {
-    return console.log(`${this.make} decelerated to ${this.speed - 5}Km/h`);
-  }
+//   brake() {
+//     return console.log(`${this.make} decelerated to ${this.speed - 5}Km/h`);
+//   }
 
-  get speedUS() {
-    return `Your ${this.make} is going ${(this.speed = this.speed / 1.6)}mi/h`;
-  }
+//   get speedUS() {
+//     return `Your ${this.make} is going ${(this.speed = this.speed / 1.6)}mi/h`;
+//   }
 
-  set speedUS(mph) {
-    this.speed = mph * 1.6;
-    return this.speed;
-  }
-}
+//   set speedUS(mph) {
+//     this.speed = mph * 1.6;
+//     return this.speed;
+//   }
+// }
 
-const fordCar = new Car('Ford', 120);
+// const fordCar = new Car('Ford', 120);
 
-console.log(fordCar.speedUS);
-fordCar.speedUS = 75;
-console.log(fordCar.speed);
-fordCar.accelerate();
-fordCar.brake();
+// console.log(fordCar.speedUS);
+// fordCar.speedUS = 75;
+// console.log(fordCar.speed);
+// fordCar.accelerate();
+// fordCar.brake();
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2023 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+  this.course = course;
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+
+console.log(mike);
