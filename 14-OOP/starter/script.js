@@ -143,7 +143,7 @@ DATA CAR 1: 'Ford' going at 120 km/h
 // console.log(fordCar.speed);
 // fordCar.accelerate();
 // fordCar.brake();
-
+// prototype chain inheritance with classes/constructors
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
@@ -154,11 +154,20 @@ Person.prototype.calcAge = function () {
 };
 
 const Student = function (firstName, birthYear, course) {
-  this.firstName = firstName;
-  this.birthYear = birthYear;
+  //inherit properties from Person constructor. 'this' is referred to newly created object
+  Person.call(this, firstName, birthYear);
   this.course = course;
+};
+
+// Manually links the student and person class prototypes so the object can access their prototype (I THINK)
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and i study ${this.course}`);
 };
 
 const mike = new Student('Mike', 2020, 'Computer Science');
 
-console.log(mike);
+Student.prototype.constructor = Student;
+
+mike.introduce();
