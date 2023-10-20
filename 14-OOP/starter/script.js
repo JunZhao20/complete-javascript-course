@@ -222,39 +222,65 @@ GOOD LUCK 😀
 
 // Ecar.accelerate();
 
-class PersonCl {
-  constructor(firstName, lastName, birthYear) {
+// class PersonCl {
+//   constructor(firstName, lastName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   }
+
+//   calcAgeCl() {
+//     console.log(`${2023 - this.birthYear}`);
+//   }
+
+//   get name() {
+//     return this.firstName;
+//   }
+
+//   set age(num) {
+//     return (this.birthYear = num);
+//   }
+
+//   static hey() {
+//     console.log('Hey there');
+//   }
+// }
+
+// class StudentCl extends PersonCl {
+//   constructor(firstName, birthYear, course) {
+//     // Calls the properties from parent class so child class can inherit/use
+//     super(firstName, birthYear);
+//     this.course = course;
+//   }
+//   introduce() {
+//     console.log(`My name is ${this.firstName} and i study ${this.course}`);
+//   }
+// }
+
+// const jun = new StudentCl('jun', 2001, 'Comp sci');
+// jun.introduce();
+
+const PersonProto = {
+  calcAge() {
+    console.log(2023 - this.birthYear);
+  },
+  init(firstName, birthYear) {
     this.firstName = firstName;
     this.birthYear = birthYear;
-  }
+  },
+};
+const StudentProto = Object.create(PersonProto);
 
-  calcAgeCl() {
-    console.log(`${2023 - this.birthYear}`);
-  }
+StudentProto.init = function (firstName, birthYear, course) {
+  StudentProto.init.call(this, firstName, birthYear);
+  this.course = course;
+};
 
-  get name() {
-    return this.firstName;
-  }
+StudentProto.introduce = function () {
+  console.log(`my name is ${this.firstName}`);
+};
 
-  set age(num) {
-    return (this.birthYear = num);
-  }
+const jay = Object.create(StudentProto);
 
-  static hey() {
-    console.log('Hey there');
-  }
-}
+jay.init('jay', 2018, 'comp sci');
 
-class StudentCl extends PersonCl {
-  constructor(firstName, birthYear, course) {
-    // Calls the properties from parent class so child class can inherit/use
-    super(firstName, birthYear);
-    this.course = course;
-  }
-  introduce() {
-    console.log(`My name is ${this.firstName} and i study ${this.course}`);
-  }
-}
-
-const jun = new StudentCl('jun', 2001, 'Comp sci');
-jun.introduce();
+jay.introduce();
