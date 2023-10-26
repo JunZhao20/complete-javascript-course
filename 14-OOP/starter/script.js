@@ -259,28 +259,28 @@ GOOD LUCK 😀
 // const jun = new StudentCl('jun', 2001, 'Comp sci');
 // jun.introduce();
 
-const PersonProto = {
-  calcAge() {
-    console.log(2023 - this.birthYear);
-  },
-  init(firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  },
-};
-const StudentProto = Object.create(PersonProto);
+// const PersonProto = {
+//   calcAge() {
+//     console.log(2023 - this.birthYear);
+//   },
+//   init(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   },
+// };
+// const StudentProto = Object.create(PersonProto);
 
-StudentProto.init = function (firstName, birthYear, course) {
-  StudentProto.init.call(this, firstName, birthYear);
-  this.course = course;
-};
+// StudentProto.init = function (firstName, birthYear, course) {
+//   StudentProto.init.call(this, firstName, birthYear);
+//   this.course = course;
+// };
 
-StudentProto.introduce = function () {
-  console.log(`my name is ${this.firstName}`);
-};
+// StudentProto.introduce = function () {
+//   console.log(`my name is ${this.firstName}`);
+// };
 
-const jay = Object.create(StudentProto);
+// const jay = Object.create(StudentProto);
 
-jay.init('jay', 2018, 'comp sci');
+// jay.init('jay', 2018, 'comp sci');
 
-jay.introduce();
+// jay.introduce();
