@@ -39,6 +39,9 @@ const restaurant = {
       `completed ${this.starterMenu[starterIndex]}, ${this.mainMenu[mainIndex]}, to ${addr} for ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Your pasta is here, made using ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
 // restaurant.delivery({
@@ -124,3 +127,24 @@ console.log(...newArray);
 
 const newMenu = [...restaurant.mainMenu, 'pasta', 'sauce'];
 console.log(newMenu);
+
+// copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// join starter and main menu
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// iterables: arrays, strings, maps, sets, NOT objects
+
+const ingredients = [
+  prompt('lets make pasta! Enter ingredient 1: '),
+  prompt('Enter ingredient 2: '),
+  prompt('Enter ingredient 3: '),
+];
+
+restaurant.orderPasta(...ingredients);
+
+const newRestaurant = { foundedIn: 1989, ...restaurant, founder: 'bing' };
+
+const restaurantCopy = { ...newRestaurant };
