@@ -137,14 +137,38 @@ console.log(menu);
 
 // iterables: arrays, strings, maps, sets, NOT objects
 
-const ingredients = [
-  prompt('lets make pasta! Enter ingredient 1: '),
-  prompt('Enter ingredient 2: '),
-  prompt('Enter ingredient 3: '),
+// const ingredients = [
+//   prompt('lets make pasta! Enter ingredient 1: '),
+//   prompt('Enter ingredient 2: '),
+//   prompt('Enter ingredient 3: '),
+// ];
+
+// restaurant.orderPasta(...ingredients);
+
+// const newRestaurant = { foundedIn: 1989, ...restaurant, founder: 'bing' };
+
+// const restaurantCopy = { ...newRestaurant };
+
+// REST of elements
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
 
-restaurant.orderPasta(...ingredients);
+console.log(pizza, risotto, otherFood);
 
-const newRestaurant = { foundedIn: 1989, ...restaurant, founder: 'bing' };
+// objects with REST
 
-const restaurantCopy = { ...newRestaurant };
+const { sat, ...weekdays } = restaurant.openingHours;
+
+console.log(weekdays);
+
+// REST and SPREAD for function parm
+
+const add = function (...num) {
+  return num.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  });
+};
+console.log(add(2, 3, 4));
