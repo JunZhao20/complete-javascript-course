@@ -172,3 +172,5 @@ const add = function (...num) {
   });
 };
 console.log(add(2, 3, 4));
+
+// Short circuiting
