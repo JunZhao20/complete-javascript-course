@@ -174,3 +174,34 @@ const add = function (...num) {
 console.log(add(2, 3, 4));
 
 // Short circuiting
+
+// OR ||
+
+// truthy value will output first truthy value
+console.log('asdf' || 2);
+// falsy value will output last falsy value if all are falsy
+console.log(null || undefined);
+
+restaurant.newGuests = 23;
+
+const guests1 = restaurant.newGuests ? restaurant.newGuests : 10;
+
+console.log(guests1);
+
+// same as ^^
+const guests2 = restaurant.newGuests || 10;
+
+console.log(guests2);
+
+// AND &&
+// only take in the first value into consideration
+// will return the first falsy value if both values aren't truthy
+console.log(0 && 'jonas');
+console.log(3 && 0);
+
+// wll output the last truthy if all is is truthy value
+console.log(4 && 3);
+
+console.log(0 && null);
+
+// example
