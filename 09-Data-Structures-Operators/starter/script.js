@@ -204,7 +204,7 @@ console.log(4 && 3);
 
 console.log(0 && null);
 
-// nullish operator
+// nullish operator (values: Null and Undefined)
 restaurant.newGuests = 0;
 
 const guests = restaurant.newGuests ?? 10;
