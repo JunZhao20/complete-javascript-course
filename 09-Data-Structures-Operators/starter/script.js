@@ -111,102 +111,120 @@ const restaurant = {
 // } = openingHours;
 // console.log(open, close);
 
-const arr = [7, 8, 9];
-const [a, b, c] = arr;
-const badNewArr = [1, 2, a, b, c];
-console.log(badNewArr);
+// const arr = [7, 8, 9];
+// const [a, b, c] = arr;
+// const badNewArr = [1, 2, a, b, c];
+// console.log(badNewArr);
 
 // spread operator
 
 // takes all value out of arr and writes it to newArray
-const newArray = [1, 2, ...arr];
-console.log(newArray);
+// const newArray = [1, 2, ...arr];
+// console.log(newArray);
 
-// logs each elem in arr
-console.log(...newArray);
+// // logs each elem in arr
+// console.log(...newArray);
 
-const newMenu = [...restaurant.mainMenu, 'pasta', 'sauce'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'pasta', 'sauce'];
+// console.log(newMenu);
 
-// copy array
-const mainMenuCopy = [...restaurant.mainMenu];
+// // copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
 
-// join starter and main menu
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+// // join starter and main menu
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
 
-// iterables: arrays, strings, maps, sets, NOT objects
+// // iterables: arrays, strings, maps, sets, NOT objects
 
-// const ingredients = [
-//   prompt('lets make pasta! Enter ingredient 1: '),
-//   prompt('Enter ingredient 2: '),
-//   prompt('Enter ingredient 3: '),
+// // const ingredients = [
+// //   prompt('lets make pasta! Enter ingredient 1: '),
+// //   prompt('Enter ingredient 2: '),
+// //   prompt('Enter ingredient 3: '),
+// // ];
+
+// // restaurant.orderPasta(...ingredients);
+
+// // const newRestaurant = { foundedIn: 1989, ...restaurant, founder: 'bing' };
+
+// // const restaurantCopy = { ...newRestaurant };
+
+// // REST of elements
+
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
 // ];
 
-// restaurant.orderPasta(...ingredients);
+// console.log(pizza, risotto, otherFood);
 
-// const newRestaurant = { foundedIn: 1989, ...restaurant, founder: 'bing' };
+// // objects with REST
 
-// const restaurantCopy = { ...newRestaurant };
+// const { sat, ...weekdays } = restaurant.openingHours;
 
-// REST of elements
+// console.log(weekdays);
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
+// // REST and SPREAD for function parm
 
-console.log(pizza, risotto, otherFood);
+// const add = function (...num) {
+//   return num.reduce((accumulator, currentValue) => {
+//     return accumulator + currentValue;
+//   });
+// };
+// console.log(add(2, 3, 4));
 
-// objects with REST
+// // Short circuiting
 
-const { sat, ...weekdays } = restaurant.openingHours;
+// // OR ||
 
-console.log(weekdays);
+// // truthy value will output first truthy value
+// console.log('asdf' || 2);
+// // falsy value will output last falsy value if all are falsy
+// console.log(null || undefined);
 
-// REST and SPREAD for function parm
+// restaurant.newGuests = 23;
 
-const add = function (...num) {
-  return num.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-  });
+// const guests1 = restaurant.newGuests ? restaurant.newGuests : 10;
+
+// console.log(guests1);
+
+// // same as ^^
+// const guests2 = restaurant.newGuests || 10;
+
+// console.log(guests2);
+
+// // AND &&
+// // only take in the first value into consideration
+// // will return the first falsy value if both values aren't truthy
+// console.log(0 && 'jonas');
+// console.log(3 && 0);
+
+// // wll output the last truthy if all is is truthy value
+// console.log(4 && 3);
+
+// console.log(0 && null);
+
+// // nullish operator (values: Null and Undefined)
+// restaurant.newGuests = 0;
+
+// const guests = restaurant.newGuests ?? 10;
+
+// console.log(guests);
+
+const rest1 = {
+  name: 'Capri',
+  nuwGuests: 20,
 };
-console.log(add(2, 3, 4));
 
-// Short circuiting
+const rest2 = {
+  name: 'La Pizzeria',
+  owner: 'Giovanni Rossi',
+};
 
-// OR ||
+// logical assignment operator
+rest1.numGuests = rest1.numGuests || 10;
 
-// truthy value will output first truthy value
-console.log('asdf' || 2);
-// falsy value will output last falsy value if all are falsy
-console.log(null || undefined);
+// same^^
+rest1.numGuests ||= 10;
 
-restaurant.newGuests = 23;
-
-const guests1 = restaurant.newGuests ? restaurant.newGuests : 10;
-
-console.log(guests1);
-
-// same as ^^
-const guests2 = restaurant.newGuests || 10;
-
-console.log(guests2);
-
-// AND &&
-// only take in the first value into consideration
-// will return the first falsy value if both values aren't truthy
-console.log(0 && 'jonas');
-console.log(3 && 0);
-
-// wll output the last truthy if all is is truthy value
-console.log(4 && 3);
-
-console.log(0 && null);
-
-// nullish operator (values: Null and Undefined)
-restaurant.newGuests = 0;
-
-const guests = restaurant.newGuests ?? 10;
-
-console.log(guests);
+rest2.numGuests = rest2.numGuests || 10;
