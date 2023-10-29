@@ -213,7 +213,7 @@ const restaurant = {
 
 const rest1 = {
   name: 'Capri',
-  nuwGuests: 20,
+  numGuests: 20,
 };
 
 const rest2 = {
@@ -227,4 +227,8 @@ rest1.numGuests = rest1.numGuests || 10;
 // same^^
 rest1.numGuests ||= 10;
 
-rest2.numGuests = rest2.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+rest2.numGuests ??= 10;
+
+console.log(rest2);
