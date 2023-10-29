@@ -204,4 +204,9 @@ console.log(4 && 3);
 
 console.log(0 && null);
 
-// example
+// nullish operator
+restaurant.newGuests = 0;
+
+const guests = restaurant.newGuests ?? 10;
+
+console.log(guests);
