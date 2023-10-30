@@ -5,6 +5,22 @@ const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Data needed for first part of the section
+
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -12,21 +28,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-  order: function (starterIndex, mainIndex) {
+  // using enhanced obj literals
+  openingHours,
+
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
   delivery: function ({
@@ -336,13 +341,13 @@ GOOD LUCK 😀
 // };
 // winningTeam(team1, draw, team2);
 
-// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-// for (let item of menu) {
-//   console.log(item);
-// }
+for (let item of menu) {
+  console.log(item);
+}
 
-// for (let item of menu.entries()) {
-//   const [index, items] = item;
-//   console.log(`${index + 1}, ${items}`);
-// }
+for (let item of menu.entries()) {
+  const [index, items] = item;
+  console.log(`${index + 1}, ${items}`);
+}
