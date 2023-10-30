@@ -28,7 +28,7 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  // using enhanced obj literals
+  // using enhanced obj literal
   openingHours,
 
   order(starterIndex, mainIndex) {
@@ -341,13 +341,13 @@ GOOD LUCK 😀
 // };
 // winningTeam(team1, draw, team2);
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-for (let item of menu) {
-  console.log(item);
-}
+// for (let item of menu) {
+//   console.log(item);
+// }
 
-for (let item of menu.entries()) {
-  const [index, items] = item;
-  console.log(`${index + 1}, ${items}`);
-}
+// for (let item of menu.entries()) {
+//   const [index, items] = item;
+//   console.log(`${index + 1}, ${items}`);
+// }
