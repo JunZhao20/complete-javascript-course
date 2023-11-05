@@ -264,3 +264,7 @@ console.log(Number.parseFloat('2.5rem'));
 console.log(Number.isNaN(Number.parseInt('a2')));
 
 console.log(Number.isNaN(+'2s'));
+
+// Numeric separator
+const d = 2_000_000_000;
+console.log(d);
