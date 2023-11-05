@@ -216,27 +216,27 @@ const restaurant = {
 
 // console.log(guests);
 
-const rest1 = {
-  name: 'Capri',
-  numGuests: 20,
-};
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 20,
+// };
 
-const rest2 = {
-  name: 'La Pizzeria',
-  owner: 'Giovanni Rossi',
-};
+// const rest2 = {
+//   name: 'La Pizzeria',
+//   owner: 'Giovanni Rossi',
+// };
 
-// logical assignment operator
-rest1.numGuests = rest1.numGuests || 10;
+// // logical assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
 
-// same^^
-rest1.numGuests ||= 10;
+// // same^^
+// rest1.numGuests ||= 10;
 
-// rest2.numGuests = rest2.numGuests || 10;
+// // rest2.numGuests = rest2.numGuests || 10;
 
-rest2.numGuests ??= 10;
+// rest2.numGuests ??= 10;
 
-console.log(rest2);
+// console.log(rest2);
 
 ///////////////////////////////////////
 // Coding Challenge #1
