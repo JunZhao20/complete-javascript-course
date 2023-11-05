@@ -251,3 +251,16 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+let n = '1';
+// Type cohesion
+console.log(+n, typeof +n);
+
+// Parsing
+// Breaks down string and looks for in
+console.log(Number.parseInt('30px'));
+
+console.log(Number.parseFloat('2.5rem'));
+
+console.log(Number.isNaN(Number.parseInt('a2')));
+
+console.log(Number.isNaN(+'2s'));
