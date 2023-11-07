@@ -253,20 +253,25 @@ btnSort.addEventListener('click', function (e) {
 // LECTURES
 let n = '1';
 // Type cohesion
-console.log(+n, typeof +n);
+// console.log(+n, typeof +n);
 
 // Parsing
 // Breaks down string and looks for in
-console.log(Number.parseInt('30px'));
+// console.log(Number.parseInt('30px'));
 
-console.log(Number.parseFloat('2.5rem'));
+// console.log(Number.parseFloat('2.5rem'));
 
-console.log(Number.isNaN(Number.parseInt('a2')));
+// console.log(Number.isNaN(Number.parseInt('a2')));
 
-console.log(Number.isNaN(+'2s'));
+// console.log(Number.isNaN(+'2s'));
 
 // Numeric separator
-const d = 2_000_000_000;
-console.log(d);
+// const d = 2_000_000_000;
+// console.log(d);
 
-// Big int
+// Create a date
+
+const now = new Date();
+console.log(now);
+
+console.log(new Date(account1.movementsDates[0]));
