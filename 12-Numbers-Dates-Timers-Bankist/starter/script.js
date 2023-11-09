@@ -296,10 +296,14 @@ if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
 //   console.log(time);
 // }, 1000);
 
+const formatTime = function (time) {
+  return time < 10 ? `0${time}` : time;
+};
+
 const clock = setInterval(() => {
   const d = new Date();
   const hour = d.getHours();
   const min = d.getMinutes();
   const sec = d.getSeconds();
-  console.log(`${hour}:${min}:${sec}`);
+  console.log(`${formatTime(hour)}:${formatTime(min)}:${formatTime(sec)}`);
 }, 1000);
