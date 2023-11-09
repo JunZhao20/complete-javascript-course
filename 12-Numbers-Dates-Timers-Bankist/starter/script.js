@@ -271,7 +271,9 @@ let n = '1';
 
 // Create a date
 
-const now = new Date();
-console.log(now);
+// const now = new Date();
+// console.log(now);
 
-console.log(new Date(account1.movementsDates[0]));
+// console.log(new Date(account1.movementsDates[0]));
+
+// Timers: setTimeout and setInterval
